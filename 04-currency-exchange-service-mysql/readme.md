@@ -83,10 +83,10 @@ Other names may be trademarks of their respective owners.
 
 Type '\help' or '\?' for help; '\quit' to exit.
 
-MySQL  JS > \connect todos-user@localhost:3306
-Creating a session to 'todos-user@localhost:3306'
-Please provide the password for 'todos-user@localhost:3306': 
-Save password for 'todos-user@localhost:3306'? [Y]es/[N]o/Ne[v]er (default No): v
+MySQL  JS > \connect exchange-db-user@localhost:3306
+Creating a session to 'exchange-db-user@localhost:3306'
+Please provide the password for 'exchange-db-user@localhost:3306': 
+Save password for 'exchange-db-user@localhost:3306'? [Y]es/[N]o/Ne[v]er (default No): v
 Fetching schema names for autocompletion... Press ^C to stop.
 Your MySQL connection id is 37
 Server version: 5.7.26 MySQL Community Server (GPL)
@@ -95,15 +95,15 @@ No default schema selected; type \use <schema> to set one.
  MySQL  localhost:3306 ssl  JS > \sql
 Switching to SQL mode... Commands end with ;
 
- MySQL  localhost:3306 ssl  SQL > use todos
-Default schema set to `todos`.
-Fetching table and column names from `todos` for auto-completion... Press ^C to stop.
+ MySQL  localhost:3306 ssl  SQL > use exchange-db
+Default schema set to `exchange-db`.
+Fetching table and column names from `exchange-db` for auto-completion... Press ^C to stop.
 
- MySQL  localhost:3306 ssl  todos  SQL > select * from todo ;
+ MySQL  localhost:3306 ssl  todos  SQL > select * from exchange_vale ;
 +----+--------------+---------+----------------------------+-------------+
-| id | description  | is_done | target_date                | user        |
+| id | conversion_multiple  | currency_from | currency_to                | user        |
 +----+--------------+---------+----------------------------+-------------+
-|  1 | Default Desc | 0       | 2019-06-26 18:30:00.000000 | in28minutes |
+|  1001 |  60  |     USD      | INR |  |
 +----+--------------+---------+----------------------------+-------------+
 1 row in set (0.0032 sec)
 
