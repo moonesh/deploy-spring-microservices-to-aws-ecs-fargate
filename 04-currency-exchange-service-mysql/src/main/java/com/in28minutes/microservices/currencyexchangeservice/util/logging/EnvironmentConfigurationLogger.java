@@ -27,7 +27,7 @@ public class EnvironmentConfigurationLogger {
 		final MutablePropertySources sources = ((AbstractEnvironment) environment).getPropertySources();
 		StreamSupport.stream(sources.spliterator(), false).filter(ps -> ps instanceof EnumerablePropertySource)
 				.map(ps -> ((EnumerablePropertySource) ps).getPropertyNames()).flatMap(Arrays::stream).distinct()
-				.forEach(prop -> LOGGER.info("{}", prop));// environment.getProperty(prop)
+				.forEach(prop -> LOGGER.info("{} - {}", prop,environment.getProperty(prop)));// environment.getProperty(prop)
 		LOGGER.info("===========================================");
 	}
 
