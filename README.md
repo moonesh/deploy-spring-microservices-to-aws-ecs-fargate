@@ -1,4 +1,4 @@
-# Deploy Spring Boot MICROSERVICES and Docker Microservices to AWS using ECS and AWS Fargate
+# Deploy Spring Boot and Docker Microservices to AWS using ECS and AWS Fargate
 
 ## Learn Amazon Web Services - AWS - deploying Spring Boot and Docker Microservices to AWS Fargate. Implement Service Discovery, Load Balancing, Auto Discovery, Centralized Configuration and Distributed Tracing in AWS.
 
