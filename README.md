@@ -69,15 +69,15 @@ SSM URN - `arn:aws:ssm:us-east-1:<account-id>:parameter/<name>`
 ## Setting up App Mesh
 
 #### Virtual nodes 
-- currency-exchange-service-vn - currency-exchange-service.in28minutes-dev.com
-- currency-conversion-service-vn - currency-conversion-service.in28minutes-dev.com
+- currency-exchange-service-vn - currency-exchange-service.mk-dev.com
+- currency-conversion-service-vn - currency-conversion-service.mk-dev.com
 
 #### Virtual services 
-- currency-exchange-service.in28minutes-dev.com -> currency-exchange-service-vn
-- currency-conversion-service.in28minutes-dev.com -> currency-conversion-service-vn
+- currency-exchange-service.mk-dev.com -> currency-exchange-service-vn
+- currency-conversion-service.mk-dev.com -> currency-conversion-service-vn
 
 #### Backend Registration
-- currency-conversion-service-vn -> currency-exchange-service.in28minutes-dev.com
+- currency-conversion-service-vn -> currency-exchange-service.mk-dev.com
 
 #### Task Definition Updates
 - aws-currency-conversion-service
@@ -91,7 +91,7 @@ SSM URN - `arn:aws:ssm:us-east-1:<account-id>:parameter/<name>`
 ## Deploying Version 2 of Currency Exchange Service to ECS and App Mesh
 
 #### App Mesh - New Virtual Node
-currency-exchange-service-v2-vn - currency-exchange-service-v2.in28minutes-dev.com
+currency-exchange-service-v2-vn - currency-exchange-service-v2.mk-dev.com
 
 #### ECS Fargate - Update Task Definition
 aws-currency-exchange-service-h2
@@ -108,7 +108,7 @@ currency-exchange-service-vr distributing traffic to
 - currency-exchange-service-v2-vn
 
 #### App Mesh - Update Service to Use Virtual Router
-currency-exchange-service.in28minutes-dev.com -> currency-exchange-service-vr
+currency-exchange-service.mk-dev.com -> currency-exchange-service-vr
 
 
 #### jq
