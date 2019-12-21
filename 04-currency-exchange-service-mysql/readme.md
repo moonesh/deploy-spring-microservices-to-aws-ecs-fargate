@@ -167,4 +167,21 @@ create table exchange_value
 	currency_to varchar(255), 
 	primary key (id)
 )
+## To connect Local MYSQL CONTAINER WITH CURRENCY EXCHANGE SERVICE LOCAL CONTAINER 
+
+1.  Used --link flag to point to the mysql container while running  the currency-exchange-service container
+
+docker run --publish 8000:8000 --network MY_BRIDGE --name currency-exchange-microservice --link mysqllocal mooneshkachroo/aws-currency-exchange-service-mysql:0.0.1-SNAPSHOT
+
+Note here : "mysqllocal" is the name of my running mysql container
+
+
+
+2.  The db connection URL in the code has to now point to the container :  jdbc:mysql://mysqllocal:3306/mydatabase
+
+- so in  the application. properties file  I changed
+
+spring.datasource.url=jdbc:mysql://${RDS_HOSTNAME:mysqllocal}:${RDS_PORT:3306}/${RDS_DB_NAME:exchange-db}
+
+
 ```
