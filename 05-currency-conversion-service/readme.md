@@ -45,3 +45,9 @@ exchangeEnvironmentInfo: "NA",
 conversionEnvironmentInfo: "NA",
 }
 ```
+
+## RUNNING AND COMMUNICATING BOTH THE SERVICE CONTAINERS LOCALLY
+
+1. docker run --publish 8000:8000 --detach --name currency-exchange-service --network MY_BRIDGE mooneshkachroo/aws-currency-exchange-service-h2:0.0.1-SNAPSHOT
+
+2. docker run --publish 8100:8100 --network MY_BRIDGE --env CURRENCY_EXCHANGE_URI=http://currency-exchange-service:8000 mooneshkachroo/aws-currency-conversion-service:0.0.1-SNAPSHOT
